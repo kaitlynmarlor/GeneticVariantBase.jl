@@ -3,6 +3,7 @@ using StatsBase
 export GeneticData, Variant, VariantIterator, iterator
 export chrom, pos, rsid, alleles, alt_allele, ref_allele, maf, hwepval, infoscore
 export alt_dosages!, alt_genotypes!
+export n_samples, n_records
 
 abstract type GeneticData end
 abstract type Variant end
@@ -42,6 +43,14 @@ Creates a `VariantIterator` for `GeneticData` `g`.
 """
 function iterator(g::GeneticData; startidx=1)
     @assert false "Not implemented."
+end
+
+function n_samples(g::GeneticData; v::Variant)::Int
+    return 0 
+end
+
+function n_records(g::GeneticData)::Int
+    return 0 
 end
 
 function chrom(g::GeneticData, v::Variant)::String
@@ -113,5 +122,12 @@ end
 function alt_genotypes!(arr::AbstractArray{T}, g::GeneticData, v::Variant) where T <: Integer
     # integer values between 0-2. 
     return arr
+end 
+
 end
-end
+
+
+# Header struct has n_samples in PGEN
+# GenetivVariantBase.n_samples 
+# this header is inside Pgen object 
+# similar for BGEN 
