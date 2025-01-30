@@ -45,11 +45,11 @@ function iterator(g::GeneticData; startidx=1)
     @assert false "Not implemented."
 end
 
-function n_samples(g::GeneticData; v::Variant)::Int
+function n_samples(g::GeneticData)::Int
     return 0 
 end
 
-function n_records(g::GeneticData)::Int
+function n_variants(g::GeneticData)::Int
     return 0 
 end
 
