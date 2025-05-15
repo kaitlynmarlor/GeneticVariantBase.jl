@@ -3,7 +3,7 @@ using StatsBase
 export GeneticData, Variant, VariantIterator, iterator
 export chrom, pos, rsid, alleles, alt_allele, ref_allele, maf, hwepval, infoscore
 export alt_dosages!, alt_genotypes!
-export n_samples, n_records
+export n_samples, n_variants
 
 abstract type GeneticData end
 abstract type Variant end
@@ -128,6 +128,6 @@ end
 
 
 # Header struct has n_samples in PGEN
-# GenetivVariantBase.n_samples 
+# GeneticVariantBase.n_samples 
 # this header is inside Pgen object 
 # similar for BGEN 
